@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Employee Portal</title>
+
+    <link rel="stylesheet" href="employee.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>Worker<span>Portal</span></h2>
+        </div>
+
+        <nav>
+
+            <button class="nav-btn active" data-section="dashboard">
+                🏠 Dashboard
+            </button>
+
+            <button class="nav-btn" data-section="profile">
+                👤 My Profile
+            </button>
+
+            <button class="nav-btn" data-section="attendance">
+                📅 Attendance
+            </button>
+
+            <button class="nav-btn" data-section="salary">
+                💰 Salary
+            </button>
+
+
+        </nav>
+
+        <button class="logout-btn" id="logoutBtn">
+            🚪 Logout
+        </button>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Top Bar -->
+        <header class="topbar">
+
+            <div>
+                <h1 id="pageTitle">Dashboard</h1>
+                <p>Welcome back, Employee!</p>
+            </div>
+
+            <div class="employee-info">
+
+                <div class="avatar">
+                    JD
+                </div>
+
+                <div>
+                    <strong id="employeeName">John Doe</strong>
+                    <small>Employee</small>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section id="dashboard" class="page-section active-section">
+
+            <div class="welcome-card">
+
+                <div>
+                    <h2>Welcome, John Doe 👋</h2>
+                    <p>
+                        Here you can manage your attendance,
+                        salary and employee information.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Statistics -->
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+
+                    <div>
+                        <p>Salary Recieved In This Month</p>
+                        <h2>₹16,800</h2>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+
+                    <div>
+                        <p>Status</p>
+                        <h2>Active</h2>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Recent Attendance -->
+
+            <div class="content-card">
+
+                <div class="card-header">
+                    <h2>Recent Attendance</h2>
+
+                    <button class="small-btn"
+                            data-section="attendance">
+                        View All
+                    </button>
+                </div>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Day</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>05 Sep 2026</td>
+                            <td>Saturday</td>
+                            <td>
+                                <span class="status present">
+                                    Present
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>04 Sep 2026</td>
+                            <td>Friday</td>
+                            <td>
+                                <span class="status present">
+                                    Present
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>03 Sep 2026</td>
+                            <td>Thursday</td>
+                            <td>
+                                <span class="status absent">
+                                    Absent
+                                </span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PROFILE ================= -->
+
+        <section id="profile" class="page-section">
+
+            <div class="content-card">
+
+                <h2>My Profile</h2>
+
+                <div class="profile-grid">
+
+                    <div class="profile-item">
+                        <label>Employee ID</label>
+                        <p>EMP001</p>
+                    </div>
+
+                    <div class="profile-item">
+                        <label>Full Name</label>
+                        <p>John Doe</p>
+                    </div>
+
+                    <div class="profile-item">
+                        <label>Phone</label>
+                        <p>9876543210</p>
+                    </div>
+
+                    <div class="profile-item">
+                        <label>Department</label>
+                        <p>Construction</p>
+                    </div>
+
+                    <div class="profile-item">
+                        <label>Position</label>
+                        <p>Worker</p>
+                    </div>
+
+                    <div class="profile-item">
+                        <label>Daily Wage</label>
+                        <p>₹700</p>
+                    </div>
+
+                    <div class="profile-item">
+                        <label>Joining Date</label>
+                        <p>10 January 2026</p>
+                    </div>
+
+                    <div class="profile-item">
+                        <label>Status</label>
+                        <p>
+                            <span class="status present">
+                                Active
+                            </span>
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ATTENDANCE ================= -->
+
+        <section id="attendance" class="page-section">
+
+            <div class="content-card">
+
+                <div class="card-header">
+                    <h2>Attendance History</h2>
+
+                    <select id="attendanceMonth">
+                        <option>September 2026</option>
+                        <option>August 2026</option>
+                        <option>July 2026</option>
+                    </select>
+                </div>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Day</th>
+                            <th>Check In</th>
+                            <th>Check Out</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>05 Sep 2026</td>
+                            <td>Saturday</td>
+                            <td>09:00 AM</td>
+                            <td>05:00 PM</td>
+                            <td>
+                                <span class="status present">
+                                    Present
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>04 Sep 2026</td>
+                            <td>Friday</td>
+                            <td>09:05 AM</td>
+                            <td>05:00 PM</td>
+                            <td>
+                                <span class="status present">
+                                    Present
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>03 Sep 2026</td>
+                            <td>Thursday</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>
+                                <span class="status absent">
+                                    Absent
+                                </span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SALARY ================= -->
+
+        <section id="salary" class="page-section">
+
+            <div class="content-card">
+
+                <h2>Salary Information</h2>
+
+                <div class="salary-summary">
+
+                    <div>
+                        <p>Daily Wage</p>
+                        <h2>₹700</h2>
+                    </div>
+
+                    <div>
+                        <p>Days Worked</p>
+                        <h2>24</h2>
+                    </div>
+
+                    <div>
+                        <p>Total Salary</p>
+                        <h2>₹16,800</h2>
+                    </div>
+
+                </div>
+
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>Days Worked</th>
+                            <th>Salary</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>September 2026</td>
+                            <td>24</td>
+                            <td>₹16,800</td>
+                            <td>
+                                <span class="status paid">
+                                    Paid
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>August 2026</td>
+                            <td>26</td>
+                            <td>₹18,200</td>
+                            <td>
+                                <span class="status paid">
+                                    Paid
+                                </span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+    </main>
+
+
+    <script src="employee.js"></script>
+
+</body>
+
+</html>

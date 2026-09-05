@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Portal</title>
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>Worker<span>Portal</span></h2>
+            <p>ADMIN PANEL</p>
+        </div>
+
+        <nav>
+
+            <button class="nav-btn active" data-section="dashboard">
+                📊 Dashboard
+            </button>
+
+            <button class="nav-btn" data-section="employees">
+                👷 Employees
+            </button>
+
+            <button class="nav-btn" data-section="attendance">
+                📅 Attendance
+            </button>
+
+            <button class="nav-btn" data-section="salary">
+                💰 Salary
+            </button>
+
+            <button class="nav-btn logout" id="logoutBtn">
+                🚪 Logout
+            </button>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div>
+                <h1 id="pageTitle">Dashboard</h1>
+                <p>Manage your workers and portal activities</p>
+            </div>
+
+            <div class="admin-info">
+                <div class="admin-avatar">AD</div>
+
+                <div>
+                    <strong>Admin</strong>
+                    <small>Administrator</small>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section id="dashboard" class="page-section active-section">
+
+            <div class="welcome-card">
+
+                <div>
+                    <h2>Welcome, Admin 👋</h2>
+
+                    <p>
+                        Manage employees, attendance, salary
+                        and leave requests from here.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- STAT CARDS -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon">👷</div>
+
+                    <div>
+                        <p>Total Employees</p>
+                        <h2 id="totalEmployees">120</h2>
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+
+                    <div>
+                        <p>Present Today</p>
+                        <h2 id="presentToday">98</h2>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+
+                    <div>
+                        <p>This Month Payout</p>
+                        <h2>₹8.4L</h2>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- RECENT EMPLOYEES -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <h2>Recent Employees</h2>
+
+                    <button
+                        class="primary-btn"
+                        onclick="showSection('employees')">
+                        View All
+                    </button>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Employee ID</th>
+                                <th>Name</th>
+                                <th>Department</th>
+                                <th>Daily Wage</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>EMP001</td>
+                                <td>John Doe</td>
+                                <td>Construction</td>
+                                <td>₹700</td>
+                                <td>
+                                    <span class="status active">
+                                        Active
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>EMP002</td>
+                                <td>Rahul Das</td>
+                                <td>Electrical</td>
+                                <td>₹750</td>
+                                <td>
+                                    <span class="status active">
+                                        Active
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>EMP003</td>
+                                <td>Amit Kumar</td>
+                                <td>Maintenance</td>
+                                <td>₹650</td>
+                                <td>
+                                    <span class="status inactive">
+                                        Inactive
+                                    </span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= EMPLOYEES ================= -->
+
+        <section id="employees" class="page-section">
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <h2>Manage Employees</h2>
+
+                    <button
+                        class="primary-btn"
+                        id="addEmployeeBtn">
+                        + Add Employee
+                    </button>
+
+                </div>
+
+
+                <!-- SEARCH -->
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="searchEmployee"
+                        placeholder="Search employee by name or ID...">
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table id="employeeTable">
+
+                        <thead>
+
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Department</th>
+                                <th>Daily Wage</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="employeeTableBody">
+
+                            <tr>
+                                <td>EMP001</td>
+                                <td>John Doe</td>
+                                <td>9876543210</td>
+                                <td>Construction</td>
+                                <td>₹700</td>
+
+                                <td>
+                                    <span class="status active">
+                                        Active
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button class="edit-btn">
+                                        Edit
+                                    </button>
+
+                                    <button class="delete-btn">
+                                        Delete
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+                                <td>EMP002</td>
+                                <td>Rahul Das</td>
+                                <td>9876543211</td>
+                                <td>Electrical</td>
+                                <td>₹750</td>
+
+                                <td>
+                                    <span class="status active">
+                                        Active
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button class="edit-btn">
+                                        Edit
+                                    </button>
+
+                                    <button class="delete-btn">
+                                        Delete
+                                    </button>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ATTENDANCE ================= -->
+
+        <section id="attendance" class="page-section">
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <h2>Employee Attendance</h2>
+
+                    <select id="attendanceMonth">
+
+                        <option>September 2026</option>
+                        <option>August 2026</option>
+                        <option>July 2026</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Date</th>
+                                <th>Employee ID</th>
+                                <th>Name</th>
+                                <th>Department</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>05 Sep 2026</td>
+                                <td>EMP001</td>
+                                <td>John Doe</td>
+                                <td>Construction</td>
+
+                                <td>
+                                    <span class="status present">
+                                        Present
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>05 Sep 2026</td>
+                                <td>EMP002</td>
+                                <td>Rahul Das</td>
+                                <td>Electrical</td>
+
+                                <td>
+                                    <span class="status absent">
+                                        Absent
+                                    </span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SALARY ================= -->
+
+        <section id="salary" class="page-section">
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <h2>Salary Management</h2>
+
+                    <select id="salaryMonth">
+
+                        <option>September 2026</option>
+                        <option>August 2026</option>
+                        <option>July 2026</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Employee ID</th>
+                                <th>Name</th>
+                                <th>Daily Wage</th>
+                                <th>Days Worked</th>
+                                <th>Total Salary Paid</th>
+                                <th>Daily Payment Status</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>EMP001</td>
+                                <td>John Doe</td>
+                                <td>₹700</td>
+                                <td>24</td>
+                                <td>₹16,800</td>
+
+                                <td>
+                                    <span class="status paid">
+                                        Paid
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>EMP002</td>
+                                <td>Rahul Das</td>
+                                <td>₹750</td>
+                                <td>23</td>
+                                <td>₹17,250</td>
+
+                                <td>
+                                    <span class="status pending">
+                                        Pending
+                                    </span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+
+
+    <script src="admin.js"></script>
+
+</body>
+</html>
