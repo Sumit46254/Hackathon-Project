@@ -1,15 +1,9 @@
-// ======================================
-// ADMIN PORTAL JAVASCRIPT
-// ======================================
 
 const navButtons = document.querySelectorAll(".nav-btn");
 
 const sections = document.querySelectorAll(".page-section");
 
 const pageTitle = document.getElementById("pageTitle");
-
-
-// SECTION TITLES
 
 const sectionTitles = {
 
@@ -21,25 +15,15 @@ const sectionTitles = {
 
     salary: "Salary Management",
 
-    leave: "Leave Requests"
-
 };
 
-
-// SHOW SECTION
-
 function showSection(sectionId) {
-
-    // Hide all sections
 
     sections.forEach(section => {
 
         section.classList.remove("active-section");
 
     });
-
-
-    // Show selected section
 
     const selectedSection =
         document.getElementById(sectionId);
@@ -50,17 +34,11 @@ function showSection(sectionId) {
 
     }
 
-
-    // Remove active from buttons
-
     navButtons.forEach(button => {
 
         button.classList.remove("active");
 
     });
-
-
-    // Add active button
 
     navButtons.forEach(button => {
 
@@ -72,8 +50,6 @@ function showSection(sectionId) {
 
     });
 
-
-    // Change page title
 
     if (sectionTitles[sectionId]) {
 
@@ -89,8 +65,6 @@ function showSection(sectionId) {
     });
 }
 
-
-// NAVIGATION
 
 navButtons.forEach(button => {
 
@@ -109,10 +83,6 @@ navButtons.forEach(button => {
 
 });
 
-
-// ======================================
-// SEARCH EMPLOYEE
-// ======================================
 
 const searchInput =
     document.getElementById("searchEmployee");
@@ -151,10 +121,6 @@ if (searchInput) {
 
 }
 
-
-// ======================================
-// ADD EMPLOYEE
-// ======================================
 
 const addEmployeeBtn =
     document.getElementById("addEmployeeBtn");
@@ -199,11 +165,6 @@ if (addEmployeeBtn) {
 
 }
 
-
-// ======================================
-// DELETE EMPLOYEE
-// ======================================
-
 const deleteButtons =
     document.querySelectorAll(".delete-btn");
 
@@ -231,11 +192,6 @@ deleteButtons.forEach(button => {
     });
 
 });
-
-
-// ======================================
-// EDIT EMPLOYEE
-// ======================================
 
 const editButtons =
     document.querySelectorAll(".edit-btn");
@@ -267,11 +223,6 @@ editButtons.forEach(button => {
     });
 
 });
-
-
-// ======================================
-// LEAVE APPROVE
-// ======================================
 
 const approveButtons =
     document.querySelectorAll(".approve-btn");
@@ -306,11 +257,6 @@ approveButtons.forEach(button => {
 
 });
 
-
-// ======================================
-// LEAVE REJECT
-// ======================================
-
 const rejectButtons =
     document.querySelectorAll(".reject-btn");
 
@@ -344,11 +290,6 @@ rejectButtons.forEach(button => {
 
 });
 
-
-// ======================================
-// LOGOUT
-// ======================================
-
 const logoutBtn =
     document.getElementById("logoutBtn");
 
@@ -370,8 +311,5 @@ if (logoutBtn) {
     });
 
 }
-
-
-// START WITH DASHBOARD
 
 showSection("dashboard");

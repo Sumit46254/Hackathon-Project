@@ -1,21 +1,11 @@
-// ============================================
-// EMPLOYEE PORTAL JAVASCRIPT
-// ============================================
 
-
-// Get all navigation buttons
 const navButtons = document.querySelectorAll(".nav-btn");
 
-// Get all page sections
 const sections = document.querySelectorAll(".page-section");
 
-// Page title
 const pageTitle = document.getElementById("pageTitle");
 
 
-// ============================================
-// SECTION NAMES
-// ============================================
 
 const sectionTitles = {
     dashboard: "Dashboard",
@@ -26,19 +16,14 @@ const sectionTitles = {
 };
 
 
-// ============================================
-// SHOW SECTION
-// ============================================
 
 function showSection(sectionId) {
 
-    // Hide all sections
     sections.forEach(section => {
         section.classList.remove("active-section");
     });
 
 
-    // Show selected section
     const selectedSection =
         document.getElementById(sectionId);
 
@@ -46,14 +31,11 @@ function showSection(sectionId) {
         selectedSection.classList.add("active-section");
     }
 
-
-    // Remove active from all buttons
     navButtons.forEach(button => {
         button.classList.remove("active");
     });
 
 
-    // Add active to clicked button
     navButtons.forEach(button => {
 
         if (button.dataset.section === sectionId) {
@@ -62,25 +44,17 @@ function showSection(sectionId) {
 
     });
 
-
-    // Change page title
     if (sectionTitles[sectionId]) {
         pageTitle.textContent =
             sectionTitles[sectionId];
     }
 
-
-    // Scroll to top
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
 }
 
-
-// ============================================
-// NAVIGATION BUTTONS
-// ============================================
 
 navButtons.forEach(button => {
 
@@ -96,10 +70,6 @@ navButtons.forEach(button => {
 });
 
 
-// ============================================
-// VIEW ALL ATTENDANCE BUTTON
-// ============================================
-
 const viewAllButton =
     document.querySelector(".small-btn");
 
@@ -114,10 +84,6 @@ if (viewAllButton) {
 
 }
 
-
-// ============================================
-// APPLY LEAVE
-// ============================================
 
 const applyLeaveBtn =
     document.getElementById("applyLeaveBtn");
@@ -178,10 +144,6 @@ if (applyLeaveBtn) {
 }
 
 
-// ============================================
-// LOGOUT
-// ============================================
-
 const logoutBtn =
     document.getElementById("logoutBtn");
 
@@ -196,7 +158,6 @@ if (logoutBtn) {
 
         if (confirmLogout) {
 
-            // Change this to your actual login page
             window.location.href = "login.html";
 
         }
@@ -205,10 +166,4 @@ if (logoutBtn) {
 
 }
 
-
-// ============================================
-// INITIAL PAGE
-// ============================================
-
-// Dashboard is displayed when the page loads
 showSection("dashboard");

@@ -10,9 +10,6 @@ body {
     color: #222;
 }
 
-
-/* SIDEBAR */
-
 .sidebar {
     position: fixed;
     left: 0;
@@ -46,13 +43,11 @@ body {
     color: #aaa;
 }
 
-
 nav {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-
 
 .nav-btn {
     border: none;
@@ -73,13 +68,11 @@ nav {
     transition: 0.2s;
 }
 
-
 .nav-btn:hover,
 .nav-btn.active {
     background: #3498db;
     color: white;
 }
-
 
 .nav-btn.logout {
     margin-top: 30px;
@@ -87,16 +80,10 @@ nav {
     color: white;
 }
 
-
-/* MAIN */
-
 .main-content {
     margin-left: 250px;
     padding: 25px;
 }
-
-
-/* TOPBAR */
 
 .topbar {
     display: flex;
@@ -123,7 +110,6 @@ nav {
     margin-top: 5px;
 }
 
-
 .admin-info {
     display: flex;
     align-items: center;
@@ -135,7 +121,6 @@ nav {
     color: #777;
     margin-top: 3px;
 }
-
 
 .admin-avatar {
     width: 45px;
@@ -154,9 +139,6 @@ nav {
     font-weight: bold;
 }
 
-
-/* SECTIONS */
-
 .page-section {
     display: none;
 }
@@ -164,9 +146,6 @@ nav {
 .active-section {
     display: block;
 }
-
-
-/* WELCOME */
 
 .welcome-card {
     background: #3498db;
@@ -183,9 +162,6 @@ nav {
     margin-bottom: 10px;
 }
 
-
-/* STATISTICS */
-
 .stats-grid {
     display: grid;
 
@@ -195,7 +171,6 @@ nav {
 
     margin-bottom: 25px;
 }
-
 
 .stat-card {
     background: white;
@@ -227,9 +202,6 @@ nav {
     margin-top: 7px;
 }
 
-
-/* CARD */
-
 .card {
     background: white;
 
@@ -242,7 +214,6 @@ nav {
     margin-bottom: 25px;
 }
 
-
 .card-header {
     display: flex;
 
@@ -252,9 +223,6 @@ nav {
 
     margin-bottom: 20px;
 }
-
-
-/* BUTTONS */
 
 .primary-btn {
     border: none;
@@ -274,9 +242,6 @@ nav {
     background: #2980b9;
 }
 
-
-/* SEARCH */
-
 .search-box {
     margin-bottom: 20px;
 }
@@ -292,9 +257,6 @@ nav {
 
     font-size: 14px;
 }
-
-
-/* TABLE */
 
 .table-container {
     overflow-x: auto;
@@ -327,9 +289,6 @@ td {
     font-size: 14px;
 }
 
-
-/* STATUS */
-
 .status {
     padding: 5px 10px;
 
@@ -338,14 +297,12 @@ td {
     font-size: 12px;
 }
 
-
 .status.active,
 .status.present,
 .status.paid {
     background: #d4edda;
     color: #155724;
 }
-
 
 .status.inactive,
 .status.absent {
@@ -358,9 +315,6 @@ td {
     background: #fff3cd;
     color: #856404;
 }
-
-
-/* ACTION BUTTONS */
 
 .edit-btn,
 .delete-btn,
@@ -396,9 +350,6 @@ td {
     color: white;
 }
 
-
-/* SELECT */
-
 select {
     padding: 9px;
 
@@ -406,7 +357,6 @@ select {
 
     border-radius: 6px;
 }
-
 
 .pending-count {
     background: #fff3cd;
@@ -420,9 +370,6 @@ select {
     font-size: 13px;
 }
 
-
-/* RESPONSIVE */
-
 @media (max-width: 1000px) {
 
     .stats-grid {
@@ -430,7 +377,6 @@ select {
     }
 
 }
-
 
 @media (max-width: 700px) {
 
